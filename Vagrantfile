@@ -12,8 +12,10 @@ Vagrant::Config.run do |config|
     chef.add_recipe "apt"
     chef.add_recipe "rails_env"
     chef.json = {
-      rbenv: {
-        group_users: ['vagrant']
+      'rbenv' => {
+        'user_installs' => [
+          { 'user' => 'vagrant' }
+        ]
       }
     }
   end
